@@ -6,6 +6,7 @@
 #include "video_device_ds.h"
 #include "capture_frame.h"
 #include "libyuv.h"
+#include "capture_frame_factory.h"
 
 #define CAPTURE_FILTER_NAME L"VideoCaptureFilter"
 #define SINK_FILTER_NAME L"SinkFilter"
@@ -116,10 +117,21 @@ bool VideoCaptureDS::Init() {
 
     sink_filter_ = new CaptureSinkFilter();
     sink_filter_->RegisterCallback([&](unsigned char* buffer, size_t length, VideoDescription video_description) {
-        std::shared_ptr<CaptureFrame> capture_frame = std::make_shared<CaptureFrame>(video_description);
-
         const int32_t width = video_description.width;
         const int32_t height = video_description.height;
+        
+        /*if (frame_width_ != width || frame_height_ != height) {
+            frame_width_ = width;
+            frame_height_ = height;
+            CaptureFrameFactory::Instance().DestroyFrame();
+            CaptureFrameFactory::Instance().CreateFrame(5, video_description);
+        }*/
+        
+        std::shared_ptr<CaptureFrame> capture_frame = std::make_shared<CaptureFrame>(video_description);
+        if (capture_frame->Data() == nullptr) {
+            // std::cout << "return" << std::endl;
+            return;
+        }
 
         int stride_y = width;
         int stride_uv = (width + 1) / 2;
@@ -148,7 +160,7 @@ bool VideoCaptureDS::Init() {
         if (result < 0) {
             return;
         }
-
+        
         if (callback_) {
             callback_(std::move(video_frame));
         }

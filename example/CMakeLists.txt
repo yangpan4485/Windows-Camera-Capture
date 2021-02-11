@@ -24,6 +24,10 @@ set(DEMO_SOURCE
     ${CMAKE_CURRENT_SOURCE_DIR}/capture/video_utils.h
     ${CMAKE_CURRENT_SOURCE_DIR}/capture/capture_frame.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/capture/capture_frame.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/capture/capture_frame_factory.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/capture/capture_frame_factory.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/capture/frame_buffer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/capture/frame_buffer.h
     ${CMAKE_CURRENT_SOURCE_DIR}/common/video_frame.h
     ${CMAKE_CURRENT_SOURCE_DIR}/common/string_utils.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/common/string_utils.h

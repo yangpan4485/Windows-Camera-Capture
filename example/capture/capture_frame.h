@@ -15,4 +15,5 @@ private:
     uint8_t* data_{};
     uint32_t width_{};
     uint32_t height_{};
+    int index_{ -1 };
 };

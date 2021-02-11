@@ -50,4 +50,7 @@ private:
 
     CaptureSinkFilter* sink_filter_{};
     VideoFrameCallback callback_{};
+
+    uint32_t frame_width_{};
+    uint32_t frame_height_{};
 };

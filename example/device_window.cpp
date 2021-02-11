@@ -150,7 +150,7 @@ void DeviceWindow::InitWindow() {
         option->SetNormalImage(_T("common\\radio_un.png"));
         option->SetSelectedImage(_T("common\\radio_sel.png"));
         option->SetGroup(_T("cameraGroup"));
-        if (device_id == devices_[i].device_id) {
+        if (i== 0 || device_id == devices_[i].device_id) {
             option->Selected(true);
         }
         device_window->Add(option);
