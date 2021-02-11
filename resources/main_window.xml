@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window size="900,600" mininfo="900,600" maxinfo="900,600" caption="0,0,0,32" sizebox="4,4,4,4">
+ <Font id="0" name="宋体" size="17" bold="false" underline="false" italic="false" />
+ <Font id="1" name="宋体" size="12"/>
+ <Font id="2" name="宋体" size="9" bold="false" italic="false" />
+ <Default shared="true" name="Button" value=" height=&quot;30&quot; width=&quot;100&quot; normalimage=&quot;file=&apos;common/button_normal.png&apos;&quot; hotimage=&quot;file=&apos;common/button_hover.png&apos;&quot; pushedimage=&quot;file=&apos;common/button_pushed.png&apos;&quot; font=&quot;0&quot;" />
+    <VerticalLayout bkcolor="#FFDDDDDD">
+        <!-- 客户区 -->
+        <VerticalLayout>
+        	<CWndUI name="renderWindow"/>
+            <Button name="btnStart" text="打开摄像头" float="true" pos="150,500,280,530"/>
+            <Button name="btnStop" text="关闭摄像头" float="true" pos="350,500,480,530"/>
+            <Button name="btnChoose" text="选择摄像头" float="true" pos="550,500,680,530"/>
+        </VerticalLayout>
+    </VerticalLayout>
+</Window>
